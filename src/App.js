@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header'
+import Home from './pages/Home'
+import CowIndex from './pages/CowIndex'
+import CowShow from './pages/CowShow'
+import CowNew from './pages/CowNew'
+import CowEdit from './pages/CowEdit'
+import NotFound from './pages/NotFound'
+import Footer from './components/Footer'
+import MockCows from './MockCows'
+import React, {useState} from 'react'
+import {Routes, Route} from 'react-router-dom'
+
 
 function App() {
+  const [cows, setCows] = useState(MockCows)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <Header/>
+      <Routes> 
+        < Route path='/' element={<Home />} />
+        < Route path='/cowindex' element={<CowIndex />} />
+        < Route path='/cowshow' element={<CowShow />} />
+        < Route path='/cownew' element={<CowNew />} />
+        < Route path='/cowedit' element={<CowEdit />} />
+        < Route path='*' element={<NotFound />}/>
+      </Routes>
+    <Footer/>
+    </>
+  )
 }
 
 export default App;
