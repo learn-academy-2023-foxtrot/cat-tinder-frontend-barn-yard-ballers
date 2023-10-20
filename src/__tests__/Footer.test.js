@@ -10,7 +10,7 @@ describe("<Footer />", () => {
           <Footer />
         </BrowserRouter>
       )
-          screen.logTestingPlaygroundURL()
+          // screen.logTestingPlaygroundURL()
           const footing = screen.getByText(/footer/i)
           expect(footing).toBeInTheDocument()
     })

@@ -10,7 +10,7 @@ describe("<Home />", () => {
         </BrowserRouter>
     )
     // screen.debug()
-    screen.logTestingPlaygroundURL()
+    // screen.logTestingPlaygroundURL()
     const greeting = screen.getByText(/home/i)
     expect(greeting).toBeInTheDocument()
   })
