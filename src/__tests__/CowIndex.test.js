@@ -10,7 +10,6 @@ describe('<CowIndex />', () => {
           <CowIndex cows={mockCows} />
         </BrowserRouter>
       )
-      screen.logTestingPlaygroundURL()
       mockCows.forEach((cow) => {
         const altTxt = screen.getAllByAltText(/profile picture for/i)
         screen.debug(altTxt[0])

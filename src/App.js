@@ -21,7 +21,7 @@ function App() {
         < Route path='/' element={<Home />} />
         < Route path='/cowindex' element={<CowIndex cows={ cows } />} />
         < Route path='/cowshow/:id' element={<CowShow cows={ cows } />} />
-        < Route path='/cownew' element={<CowNew />} />
+        < Route path='/cownew' element={<CowNew createCow={ createCow } />} />
         < Route path='/cowedit' element={<CowEdit />} />
         < Route path='*' element={<NotFound />}/>
       </Routes>
