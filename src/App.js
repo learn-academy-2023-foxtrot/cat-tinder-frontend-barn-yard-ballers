@@ -9,6 +9,7 @@ import Footer from './components/Footer'
 import MockCows from './MockCows'
 import React, {useState} from 'react'
 import {Routes, Route} from 'react-router-dom'
+import './App.css'
 
 
 function App() {
@@ -18,8 +19,8 @@ function App() {
     <Header/>
       <Routes> 
         < Route path='/' element={<Home />} />
-        < Route path='/cowindex' element={<CowIndex />} />
-        < Route path='/cowshow' element={<CowShow />} />
+        < Route path='/cowindex' element={<CowIndex cows={ cows } />} />
+        < Route path='/cowshow/:id' element={<CowShow cows={ cows } />} />
         < Route path='/cownew' element={<CowNew />} />
         < Route path='/cowedit' element={<CowEdit />} />
         < Route path='*' element={<NotFound />}/>
