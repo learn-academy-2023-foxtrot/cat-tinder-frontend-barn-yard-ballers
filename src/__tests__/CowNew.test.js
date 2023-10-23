@@ -9,8 +9,6 @@ describe("<CowNew />", () => {
             <CowNew />
           </BrowserRouter>
         )
-        screen.debug()
-        screen.logTestingPlaygroundURL()
         const cowAdd = screen.getByRole('heading', {
             name: /add a cow/i
           })
