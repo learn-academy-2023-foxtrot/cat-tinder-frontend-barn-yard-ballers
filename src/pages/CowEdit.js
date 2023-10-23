@@ -5,6 +5,7 @@ import { Form, FormGroup, Label, Input, Button } from "reactstrap"
 function CowEdit({cows, updateCow}) {
   const {id} = useParams()
   let currentCow = cows?.find((cow) => cow.id === +id)
+  
   const [editCow, setEditCow] = useState({
     name: currentCow?.name,
     age: currentCow?.age,

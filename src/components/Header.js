@@ -1,44 +1,46 @@
 import React from 'react'
-import { Nav, NavItem } from "reactstrap"
+import { Nav, Navbar, NavbarBrand, NavItem, Button } from "reactstrap"
 import { NavLink } from "react-router-dom"
 import cowLogo from "../assests/cows.webp"
-import './Header.css'
+import '../App.css'
 
 function Header() {
   return (
-    <div className='header-container'>Header
+    <>
+    <Navbar className='navbar'>
+          <div className='header-container'>Bovine Mingle
     <Nav className="header-nav">
-      <NavItem>
-        <NavLink to="/">
+        <NavbarBrand href="/">
           <img
-            src={cowLogo}
-            alt="Cow Tinder logo with outline of cow"
             className="cow-logo"
-          />
-        </NavLink>
-      </NavItem>
+            alt="Cow Tinder logo with outline of cow"
+            src={cowLogo}
+            style={{
+              height: 60,
+              width: 60,
+            }}
+            />
+        </NavbarBrand>
+      <ul className='nav-item'>
       <NavItem>
-        <NavLink to="/cowindex" className="nav-link">
+        <NavLink to="/cowindex/">
+          <Button >
           Meet the Cows
-        </NavLink>
+          </Button>
+          </NavLink>
       </NavItem>
       <NavItem>
-        <NavLink to="/cownew" className="nav-link">
-          Add a New Cow
-        </NavLink>
+        <NavLink to="/cownew/">
+          <Button>
+             Add a New Cow 
+            </Button>
+             </NavLink>
       </NavItem>
-      <NavItem>
-        <a
-          target="blank"
-          href="./assests/cows.webp"
-          alt='cow-tinder-logo'
-          className="nav-link"
-        >
-          Adopt a Cow!
-        </a>
-      </NavItem>
+      </ul>
     </Nav>
     </div>
+    </Navbar>
+    </>
   )
 }
 

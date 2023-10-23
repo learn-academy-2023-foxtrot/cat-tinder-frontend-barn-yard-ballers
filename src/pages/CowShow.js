@@ -1,13 +1,13 @@
 import React from "react"
-import { useParams } from "react-router-dom"
-import { Card, CardBody, CardSubtitle, CardTitle, CardText } from "reactstrap"
+import { useParams, NavLink } from "react-router-dom"
+import { Card, CardBody, CardSubtitle, CardTitle, CardText, Button } from "reactstrap"
 
 const CowShow = ({ cows }) => {
   const { id } = useParams()
   let currentCow = cows?.find((cow) => cow.id === +id)
   return (
-    <>
-      <h1 className="heading">CowShow Page</h1>
+    <div className="main-container-show">
+      <h1 className="heading">Say hello to</h1>
       <main className="card">
         {currentCow && (
           <Card
@@ -23,20 +23,28 @@ const CowShow = ({ cows }) => {
             <CardTitle tag="h5">
               Name: {currentCow.name}
               </CardTitle>
-            {/* <CardTitle tag="h6"> 
+            <CardTitle tag="h6"> 
             Breed: {currentCow.breed}
-            </CardTitle> */}
+            </CardTitle>
             <CardSubtitle className="mb-2 text-muted" tag="h6">
               {currentCow.age}
             </CardSubtitle>
             <CardText tag="h6"> 
-            {currentCow.hobby}
+            Hobby: {currentCow.hobby}
             </CardText>
+            <NavLink to="/catindex">
+            <Button> Delete Cow Profile </Button>
+            </NavLink>
+            <NavLink to={`/cowedit/${currentCow.id}`}>
+              <Button name="submit">
+                Edit this Cow
+              </Button>
+            </NavLink>
           </CardBody>
         </Card>
           )}
       </main>
-    </>
+    </div>
   )
 }
 

@@ -7,7 +7,7 @@ import CowEdit from './pages/CowEdit'
 import NotFound from './pages/NotFound'
 import Footer from './components/Footer'
 import MockCows from './MockCows'
-import React, {useState} from 'react'
+import React, { useState, useEffect } from 'react'
 import {Routes, Route} from 'react-router-dom'
 import './App.css'
 
@@ -50,6 +50,18 @@ function App() {
     .then(() => readCow())
     .catch((errors) => console.log("Cow update errors:", errors))
   }
+  const deleteCow = (id) => {
+    fetch(`http://localhost:3000/cows/${id}`, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "DELETE"
+    })
+      .then((response) => response.json())
+      .then(() => readCow())
+      .catch((errors) => console.log("delete errors:", errors))
+  }
+  
 
   return (
     <>
@@ -57,7 +69,7 @@ function App() {
       <Routes> 
         < Route path='/' element={<Home />} />
         < Route path='/cowindex' element={<CowIndex cows={ cows } />} />
-        < Route path='/cowshow/:id' element={<CowShow cows={ cows } />} />
+        < Route path='/cowshow/:id' element={<CowShow cows={ cows } deleteCow={ deleteCow } />} />
         < Route path='/cownew' element={<CowNew createCow={ createCow } />} />
         < Route path='/cowedit/:id' element={<CowEdit cows={ cows } updateCow={ updateCow } />} />
         < Route path='*' element={<NotFound />} />

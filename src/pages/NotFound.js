@@ -1,9 +1,9 @@
 import React from 'react'
-import './NotFound.css'
+import '../App.css'
 
 function NotFound() {
   return (
-    <div className='notfound-container'>NotFound</div>
+    <div className='notfound-container'>404 NotFound</div>
   )
 }
 
