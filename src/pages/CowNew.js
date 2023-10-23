@@ -23,7 +23,7 @@ function CowNew({createCow}) {
   }
 
   return (
-    <>
+    <div className='main-container-new'>
       <h2>Add a Cow</h2>
       <Form>
         <FormGroup>
@@ -49,7 +49,7 @@ function CowNew({createCow}) {
             placeholder="Place your breed here"
             type="text"
             onChange={handleChange}
-            value={newCow.hobby}
+            value={newCow.breed}
           />
         </FormGroup>
         <FormGroup>
@@ -63,7 +63,7 @@ function CowNew({createCow}) {
             type="number"
             onChange={handleChange}
             value={newCow.age}
-          />
+            />
         </FormGroup>
         <FormGroup>
           <Label for="hobby">
@@ -72,11 +72,11 @@ function CowNew({createCow}) {
           <Input
             id="hobby"
             name="hobby"
-            placeholder="Place your enjoys here"
+            placeholder="Place your hobby here"
             type="text"
             onChange={handleChange}
             value={newCow.hobby}
-          />
+            />
         </FormGroup>
         <FormGroup>
           <Label for="image">
@@ -89,13 +89,13 @@ function CowNew({createCow}) {
             type="url"
             onChange={handleChange}
             value={newCow.image}
-          />
+            />
         </FormGroup>
         <Button onClick={handleSubmit} name="submit">
           Submit
         </Button>
       </Form>
-    </>
+    </div>
   )
 }
 

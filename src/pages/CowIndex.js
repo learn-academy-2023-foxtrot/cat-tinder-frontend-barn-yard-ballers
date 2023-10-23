@@ -4,14 +4,15 @@ import { NavLink } from "react-router-dom"
 
 function CowIndex({ cows }) {
   return (
-    <main className='cowsindex-cards'>
+    <div className='main-container-index' id='cards'>
+    <main >
     {cows?.map((cow, index) => {
       return (
-        <Card
-          style={{
-            width: "14rem"
-          }}
-          key={index}
+        <Card className='main-card'
+        style={{
+          width: "14rem"
+        }}
+        key={index}
         >
           <img 
           alt={`profile picture for ${cow.name}`} src={cow.image} 
@@ -33,6 +34,7 @@ function CowIndex({ cows }) {
       )
     })}
     </main>
+    </div>
   )
 }
 

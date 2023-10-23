@@ -1,9 +1,14 @@
 import React from 'react'
 import './Footer.css'
+import {Navbar} from 'reactstrap'
 
 function Footer() {
   return (
-    <div className='footer-container'>Footer</div>
+    <>
+      <Navbar className='navbar-footer' fixed="bottom">
+        <p id='footer-text'>&copy; 2023 Louis & Tori, Bovine Mingle </p>
+      </Navbar>
+    </>
   )
 }
 
